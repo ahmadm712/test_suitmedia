@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:test_suitmedia/cubits/list_users_cubit/list_users_cubit.dart';
 import 'package:test_suitmedia/data/models/list_user_model.dart';
 import 'package:test_suitmedia/pages/second_page.dart';
+import 'package:test_suitmedia/shared/styles.dart';
 import 'package:test_suitmedia/widgets/appbar.dart';
 
 class ThridPage extends StatefulWidget {
@@ -130,8 +131,16 @@ class UserCard extends StatelessWidget {
               ),
             ),
           ),
-          title: Text('${user.firstName} ${user.lastName}'),
-          subtitle: Text(user.email!),
+          title: Text(
+            '${user.firstName} ${user.lastName}',
+            style: blackTextStyle.copyWith(fontSize: 16, fontWeight: semiBold),
+          ),
+          subtitle: Text(
+            user.email!.toUpperCase(),
+            style: blackTextStyle.copyWith(
+              fontSize: 11,
+            ),
+          ),
         ),
       ),
     );
